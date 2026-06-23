@@ -1,0 +1,648 @@
+/* Custom Responsive Overrides for DesignOrbit Mobile View */
+
+/* ==========================================================================
+   Global Responsive Typography & Spacing
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 100px;
+    letter-spacing: -6px;
+  }
+
+  h2 {
+    font-size: 40px;
+    letter-spacing: -0.8px;
+    line-height: 1.15em;
+  }
+
+  h3 {
+    font-size: 24px;
+    letter-spacing: -0.4px;
+  }
+
+  .body-text-extra-large {
+    font-size: 32px;
+    letter-spacing: -0.6px;
+    line-height: 1.2em;
+  }
+
+  .section-padding-large {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .page-vertical-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  h1 {
+    font-size: 60px;
+    letter-spacing: -3px;
+  }
+
+  h2 {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+    line-height: 1.2em;
+  }
+
+  h3 {
+    font-size: 20px;
+    letter-spacing: -0.3px;
+  }
+
+  .body-text-extra-large {
+    font-size: 24px;
+    letter-spacing: -0.4px;
+    line-height: 1.25em;
+  }
+
+  .section-padding-large {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .page-vertical-padding {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* ==========================================================================
+   Navigation Bar Responsiveness
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+  .navbar {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  
+  .nav-menu-block-inner {
+    background-color: var(--bg-color-02);
+    padding: 30px 20px;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .nav-link {
+    color: var(--white) !important;
+    font-size: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link-dot {
+    background-color: var(--white);
+  }
+}
+
+/* ==========================================================================
+   Hero Section Responsiveness
+   ========================================================================== */
+@media screen and (max-width: 767px) {
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .hero-items-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .hero-item-block {
+    width: 100% !important;
+    transform: none !important; /* Reset 3D translations causing overflow */
+    min-height: 160px;
+  }
+  
+  .intro-video {
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .intro-video-block {
+    height: 300px;
+  }
+
+  .intro-video-badge {
+    padding: 10px 20px;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+/* ==========================================================================
+   About Section Overrides
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+  .about {
+    padding-bottom: 60px;
+  }
+  
+  .about-content-wrapper {
+    margin-top: 60px;
+  }
+}
+
+/* ==========================================================================
+   Services Section Optimizations (Key Request)
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+  .services-top-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .services-title-block {
+    max-width: 100%;
+  }
+
+  .service-cards-block {
+    grid-template-columns: 1fr;
+    grid-row-gap: 24px;
+    margin-top: 40px;
+  }
+
+  .service-card {
+    height: auto !important; /* Let card adapt to content size */
+    min-height: 380px;
+    padding: 24px !important;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .service-card-title-block {
+    max-width: 100%;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .service-card-image-block {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 10px;
+    margin: 10px 0;
+    transform: scale(0.85);
+    transform-origin: center center;
+    position: relative;
+  }
+
+  .service-card-image-block img {
+    max-height: 125px !important;
+    width: auto !important;
+  }
+
+  .service-card-badges-block {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: auto; /* Push badges to the bottom */
+  }
+
+  .service-card-badge-block {
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+}
+
+/* ==========================================================================
+   Benefits Section Responsiveness
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+  .benefit-cards-block {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    margin-top: 40px;
+  }
+
+  /* Ensure auto positioning works for stacked grid blocks */
+  #w-node-e2c0ee9d-40c9-6d33-5208-4ca550370d7e-07f9d3e4,
+  #w-node-c4aff942-cab4-f1ad-9b62-417534b81657-07f9d3e4,
+  #w-node-d7e06b0a-9603-a4f9-0b21-a49c119daf5d-07f9d3e4 {
+    grid-area: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .benefit-cards-block {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefit-card-02, .benefit-card-03, .benefit-card-04 {
+    height: 250px;
+    min-height: auto;
+  }
+
+  .benefit-card-02 {
+    padding: 24px;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .benefit-card-image-block-02 {
+    height: auto;
+    max-height: 120px;
+    position: relative;
+  }
+
+  .benefit-card-image-02 {
+    max-height: 100px;
+    width: auto;
+  }
+}
+
+/* ==========================================================================
+   Works Section Responsiveness
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+  .works-top-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .works-title-block {
+    max-width: 100%;
+  }
+
+  .works-cards-block {
+    margin-top: 40px;
+    gap: 40px;
+  }
+
+  .work-card {
+    grid-template-columns: 1fr;
+    height: auto !important; /* Stack work image and details vertically */
+    position: static; /* Disable sticky stacking on mobile to avoid content cutoff */
+  }
+
+  .work-image-block {
+    height: 250px;
+    border-radius: 32px 32px 0 0;
+  }
+
+  .work-card-text-content-block {
+    padding: 24px;
+  }
+
+  .work-info-block {
+    margin-top: 30px;
+  }
+
+  .work-category-block {
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+/* ==========================================================================
+   Pricing Section Responsiveness
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+  .pricing-cards-block {
+    grid-template-columns: 1fr;
+    grid-row-gap: 24px;
+    margin-top: 40px;
+  }
+  
+  .pricing-card, .pricing-card-pro {
+    border-radius: 24px;
+    padding: 24px;
+  }
+}
+
+/* ==========================================================================
+   Contact Form Responsiveness
+   ========================================================================== */
+@media screen and (max-width: 991px) {
+  .form-content-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .form-info-block {
+    max-width: 100%;
+  }
+
+  .contact-form-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .form-field-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .service-card-image-block {
+    transform: scale(0.7) !important;
+  }
+}
+
+/* ==========================================================================
+   Footer Section Responsiveness
+   ========================================================================== */
+@media screen and (max-width: 767px) {
+  .footer-cta-block {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .footer-cta-block a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-bottom-block {
+    flex-direction: column;
+    margin-top: 60px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-nav-block {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-utility-nav-block {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ==========================================================================
+   Process Section Custom 4-Column Layout Overrides
+   ========================================================================== */
+#Process .pricing-cards-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+}
+
+@media screen and (max-width: 991px) {
+  #Process .pricing-cards-block {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #Process .pricing-cards-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Visual & Responsiveness Fixes (Logo, H1 overlapping, Contrast, CTA Buttons)
+   ========================================================================== */
+h1 {
+  letter-spacing: -1.5px !important;
+}
+
+/* Navbar brand logo color fix on main light navbar */
+.navbar .nav-brand div {
+  color: #2b2b2b !important;
+}
+
+/* Navbar brand logo color fix on floating dark navbar */
+.fixed-nav-wrapper .nav-brand div {
+  color: #fff !important;
+}
+
+/* Hero section text contrast fix on white background */
+.hero-title-wrapper p:nth-of-type(1) {
+  color: rgba(43, 43, 43, 0.7) !important;
+}
+
+/* Hero section secondary button (View Work) styling on white background */
+.hero-title-wrapper .button-secondary {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 1px solid rgb(52, 52, 56) !important;
+  color: rgb(43, 43, 43) !important;
+}
+
+/* Mobile nav CTA styling rules */
+@media screen and (max-width: 991px) {
+  .nav-cta-block-mobile {
+    display: flex !important;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .nav-cta-block-mobile {
+    display: none !important;
+  }
+}
+
+/* Fallback hamburger icon for mobile navigation button in case Lottie fails to load */
+.nav-menu-button {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232b2b2b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='3' y1='12' x2='21' y2='12'></line><line x1='3' y1='6' x2='21' y2='6'></line><line x1='3' y1='18' x2='21' y2='18'></line></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 24px !important;
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* Hide Webflow badge badge/card in bottom right */
+.w-webflow-badge {
+  display: none !important;
+}
+
+/* Ensure work project images fill the image block completely with no empty space on the sides */
+.work-image-block {
+  background-color: #0c0c0d !important; /* Match dark theme card background */
+  display: block !important; /* Reset flexbox alignment to prevent height/width constraints */
+  overflow: hidden !important;
+}
+.work-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+
+
+/* See More Projects feature hidden class */
+.project-hidden {
+  display: none !important;
+}
+
+
+/* ==========================================================================
+   Why It Matters Cards Centralization & Vibrant Colors
+   ========================================================================== */
+
+/* Apply styling to all benefit cards */
+.benefit-card-01,
+.benefit-card-02,
+.benefit-card-03,
+.benefit-card-04 {
+  box-sizing: border-box !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+}
+
+/* Enable relative positioning on text-only cards so we can absolute-center the text */
+.benefit-card-01,
+.benefit-card-03,
+.benefit-card-04 {
+  position: relative !important;
+}
+
+/* Let Card 2 lay out normally via flexbox (text at top, graphic below) */
+.benefit-card-02 {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 24px !important;
+}
+
+/* Force absolute centering for text-only cards (1, 3, 4) */
+.benefit-card-title-block-01,
+.benefit-card-title-block-03,
+.benefit-card-info-block-04 {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  height: auto !important;
+}
+
+/* Ensure Card 2's title block centers its contents and text properly */
+.benefit-card-02-title-block {
+  width: 100% !important;
+  max-width: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+/* Ensure h3 headings and body text center align horizontally */
+.benefit-card-01 h3, 
+.benefit-card-02 h3, 
+.benefit-card-03 h3, 
+.benefit-card-04 h3,
+.benefit-card-01 .body-text-regular,
+.benefit-card-02 .body-text-regular,
+.benefit-card-03 .body-text-regular,
+.benefit-card-04 .body-text-regular {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Specifically style Card 4's body text to match the inline styles of Card 1-3 */
+.benefit-card-04 .body-text-regular {
+  margin-top: 8px !important;
+  font-size: 14px !important;
+  opacity: 0.85 !important;
+  line-height: 1.4 !important;
+}
+
+/* Override background colors with vibrant modern selections */
+.benefit-card-01 {
+  background-color: #635bff !important; /* Saturated Royal Indigo */
+}
+.benefit-card-02 {
+  background-color: #ff6b00 !important; /* Vibrant Sunset Orange (high contrast with white text) */
+}
+.benefit-card-03 {
+  background-color: #ff007f !important; /* Vibrant Bright Pink/Magenta */
+}
+.benefit-card-04 {
+  background-color: #186afe !important; /* Vibrant Electric Blue */
+}
+
+/* Hide non-rendering Lottie blocks just in case they are referenced elsewhere */
+.benefit-card-image-block-01,
+.benefit-card-image-block-04,
+.benefit-image-block-03 {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Desktop Project Cards Sticky Stacking Effect
+   ========================================================================== */
+@media screen and (min-width: 992px) {
+  /* Prevent parent container elements from clipping or disabling sticky positioning */
+  .works,
+  .works .container,
+  .works .page-vertical-padding,
+  .works .section-padding-large,
+  .works-cards-block {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .works-cards-block {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important; /* Zero gap so cards stack directly on top of each other */
+  }
+
+  .work-card {
+    position: sticky !important;
+    top: 100px !important; /* Position where cards lock on scroll */
+    height: 600px !important; /* Fixed height for consistent stacking */
+    margin-bottom: 80px !important; /* Generous bottom margin to scroll past cards before next locks */
+    background-color: var(--white) !important;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.08) !important; /* Subtle shadow to outline stacked layers */
+    z-index: 1 !important;
+  }
+
+  /* Increment z-index on cards to ensure later cards stack correctly on top of earlier ones */
+  .work-card:nth-child(1) { z-index: 1 !important; }
+  .work-card:nth-child(2) { z-index: 2 !important; }
+  .work-card:nth-child(3) { z-index: 3 !important; }
+  .work-card:nth-child(4) { z-index: 4 !important; }
+  .work-card:nth-child(5) { z-index: 5 !important; }
+  .work-card:nth-child(6) { z-index: 6 !important; }
+  .work-card:nth-child(7) { z-index: 7 !important; }
+  .work-card:nth-child(8) { z-index: 8 !important; }
+}
+
+
+
+
+
+
