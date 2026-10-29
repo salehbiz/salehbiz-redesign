@@ -472,25 +472,113 @@ h1 {
   display: none !important;
 }
 
-/* Ensure work project images fill the image block completely with no empty space on the sides */
-.work-image-block {
-  background-color: #0c0c0d !important; /* Match dark theme card background */
-  display: block !important; /* Reset flexbox alignment to prevent height/width constraints */
-  overflow: hidden !important;
+/* Works section — dark, full bleed cards */
+.works {
+  background-color: #0c0c0d !important;
 }
+.works h2,
+.works .section-caption-text,
+.works p {
+  color: #ffffff !important;
+}
+.works .section-caption-text {
+  opacity: 0.5;
+}
+/* Strip horizontal padding so videos go edge to edge */
+.works .page-vertical-padding,
+.works .container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 100% !important;
+}
+/* Keep heading area padded */
+.works-top-block,
+.works-title-block {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/* Work cards — full bleed, edge to edge */
+.work-card {
+  background-color: #0c0c0d !important;
+  color: #ffffff !important;
+  cursor: default !important;
+  text-decoration: none !important;
+  position: relative !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  display: block !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Remove Webflow hover transforms */
+.work-card:hover,
+.work-card:focus,
+.work-card:active {
+  transform: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Video block — true full width, no rounding */
+.work-image-block {
+  background-color: #0c0c0d !important;
+  display: block !important;
+  overflow: hidden !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+
+/* Full video, no cropping, no rounding */
 .work-image {
   width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
+  height: auto !important;
+  object-fit: unset !important;
   display: block !important;
+  border-radius: 0 !important;
+}
+
+/* Info bar below video */
+.work-card-info {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 14px 20px !important;
+  gap: 16px !important;
+}
+
+.work-card-title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  color: #ffffff !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.3px !important;
+}
+
+/* View Project button */
+.work-view-btn {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding: 8px 18px !important;
+  border-radius: 40px !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  pointer-events: all !important;
+  transition: background 0.2s ease !important;
+}
+.work-view-btn:hover {
+  background: rgba(255,255,255,0.16) !important;
 }
 
 
 
-/* See More Projects feature hidden class */
-.project-hidden {
-  display: none !important;
-}
 
 
 /* ==========================================================================
@@ -621,12 +709,10 @@ h1 {
   }
 
   .work-card {
-    position: sticky !important;
-    top: 100px !important; /* Position where cards lock on scroll */
-    height: 600px !important; /* Fixed height for consistent stacking */
-    margin-bottom: 80px !important; /* Generous bottom margin to scroll past cards before next locks */
-    background-color: var(--white) !important;
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.08) !important; /* Subtle shadow to outline stacked layers */
+    position: relative !important;
+    height: auto !important;
+    margin-bottom: 60px !important;
+    background-color: #0c0c0d !important;
     z-index: 1 !important;
   }
 
@@ -646,3 +732,148 @@ h1 {
 
 
 
+
+/* ==========================================================================
+   Landing page polish (audit fixes)
+   ========================================================================== */
+h1 {
+  font-family: Satoshi, Arial, sans-serif !important;
+}
+
+/* Work section slides up over the light About section as a sheet */
+.works {
+  position: relative;
+  z-index: 2;
+  margin-top: -40px;
+  border-radius: 40px 40px 0 0;
+}
+
+/* Dark-section captions and secondary buttons */
+.works .section-caption,
+.form .section-caption {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: none !important;
+}
+.works .section-caption-text,
+.form .section-caption-text {
+  color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1 !important;
+}
+.works .button-secondary {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+.works .button-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Contact + footer match the Work background */
+.form,
+.footer {
+  background-color: #0c0c0d !important;
+}
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 32px !important;
+}
+.form-info-block {
+  max-width: 640px !important;
+  width: 100% !important;
+}
+
+/* Crop the dark rounded frame baked into the exported videos */
+.work-image-block {
+  aspect-ratio: 1160 / 656;
+}
+.work-image-block .work-video,
+.work-image-block .work-image {
+  transform: scale(1.104);
+  transform-origin: center;
+}
+
+/* Desktop: cap card width so each video isn't a full screen tall */
+@media screen and (min-width: 992px) {
+  .works-cards-block {
+    max-width: 1100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 24px !important;
+    box-sizing: content-box !important;
+  }
+  .work-card {
+    width: 100% !important;
+  }
+  .work-image-block {
+    border-radius: 16px !important;
+  }
+  .works-top-block,
+  .works-title-block {
+    max-width: 1100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    box-sizing: content-box !important;
+  }
+}
+
+/* Contact — single centered WhatsApp CTA */
+.contact-simple {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contact-simple-title {
+  color: #ffffff !important;
+  margin: 24px 0 0 !important;
+}
+.contact-simple-sub {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 16px 0 40px;
+}
+.contact-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #0c0c0d;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 18px 36px;
+  border-radius: 60px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.contact-wa-btn:hover {
+  background: #2ee072;
+  transform: translateY(-2px);
+}
+.contact-simple-note {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  margin: 14px 0 0;
+}
+.contact-email-line {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 14px;
+}
+.contact-email-line a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media screen and (max-width: 479px) {
+  .contact-simple { padding: 80px 20px; }
+  .contact-wa-btn { width: 100%; justify-content: center; }
+}
