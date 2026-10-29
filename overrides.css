@@ -877,3 +877,35 @@ h1 {
   .contact-simple { padding: 80px 20px; }
   .contact-wa-btn { width: 100%; justify-content: center; }
 }
+
+/* Process — dark, matches Work and Contact */
+#Process.pricing {
+  background-color: #0c0c0d !important;
+}
+#Process h2,
+#Process h3 {
+  color: #ffffff !important;
+}
+#Process p,
+#Process .body-text-regular {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+#Process .section-caption {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: none !important;
+}
+#Process .section-caption-text {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+#Process .pricing-card,
+#Process .pricing-card-pro {
+  background: #151517 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  box-shadow: none !important;
+}
+#Process .pricing-card-pro {
+  border-color: rgba(254, 119, 1, 0.45) !important;
+}
