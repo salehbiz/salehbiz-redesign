@@ -484,19 +484,7 @@ h1 {
 .works .section-caption-text {
   opacity: 0.5;
 }
-/* Strip horizontal padding so videos go edge to edge */
-.works .page-vertical-padding,
-.works .container {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  max-width: 100% !important;
-}
-/* Keep heading area padded */
-.works-top-block,
-.works-title-block {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}
+
 
 /* Work cards — full bleed, edge to edge */
 .work-card {
@@ -794,28 +782,14 @@ h1 {
 
 /* Desktop: cap card width so each video isn't a full screen tall */
 @media screen and (min-width: 992px) {
-  .works-cards-block {
-    max-width: 1100px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 0 24px !important;
-    box-sizing: content-box !important;
-  }
+
   .work-card {
     width: 100% !important;
   }
   .work-image-block {
     border-radius: 16px !important;
   }
-  .works-top-block,
-  .works-title-block {
-    max-width: 1100px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-    box-sizing: content-box !important;
-  }
+
 }
 
 /* Contact — single centered WhatsApp CTA */
@@ -908,4 +882,205 @@ h1 {
 }
 #Process .pricing-card-pro {
   border-color: rgba(254, 119, 1, 0.45) !important;
+}
+
+/* ==========================================================================
+   One accent: orange for section labels and every WhatsApp button
+   ========================================================================== */
+.section-caption,
+.works .section-caption,
+.form .section-caption,
+#Process .section-caption {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.section-caption-text,
+.works .section-caption-text,
+.form .section-caption-text,
+#Process .section-caption-text {
+  color: #fe7701 !important;
+  opacity: 1 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+}
+
+.wa-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #fe7701 !important;
+  color: #ffffff !important;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 16px 28px;
+  border: none !important;
+  border-radius: 60px !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.wa-btn:hover {
+  background: #ff8a24 !important;
+  transform: translateY(-2px);
+}
+.wa-btn-lg {
+  font-size: 17px;
+  padding: 18px 36px;
+}
+.wa-btn-block {
+  display: flex !important;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 20px;
+}
+@media screen and (max-width: 479px) {
+  .wa-btn-lg { width: 100%; }
+}
+
+/* Header: menu left, logo centered, WhatsApp button right */
+.navbar .nav-container {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+.navbar .nav-brand {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+}
+.navbar .nav-menu-block {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+.navbar .nav-menu-button {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+.navbar .nav-cta-block {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  display: flex !important;
+}
+.navbar .nav-links-wrapper {
+  padding-left: 0 !important;
+}
+.nav-wa-btn {
+  font-size: 14px;
+  padding: 10px 18px;
+  gap: 8px;
+}
+@media screen and (max-width: 479px) {
+  .nav-wa-btn {
+    padding: 10px 14px;
+  }
+}
+.nav-wa-btn { white-space: nowrap; }
+@media screen and (max-width: 767px) {
+  .nav-wa-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+  }
+  .nav-wa-btn span { display: none; }
+  .nav-wa-btn svg { width: 20px; height: 20px; }
+}
+@media screen and (max-width: 991px) {
+  .navbar .nav-menu-top-block { display: none !important; }
+  .navbar .nav-menu-block-inner { padding-top: 72px !important; }
+}
+.nav-menu-button.w--open { filter: invert(1); }
+
+/* Header: logo only, centered */
+.navbar .nav-container {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* WhatsApp buttons: calm, no orange */
+.wa-btn {
+  background: #1a1a1d !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+.wa-btn:hover {
+  background: #2a2a2e !important;
+  transform: none !important;
+}
+.works .wa-btn,
+#Process .wa-btn,
+.form .wa-btn {
+  background: #ffffff !important;
+  color: #0c0c0d !important;
+}
+.works .wa-btn:hover,
+#Process .wa-btn:hover,
+.form .wa-btn:hover {
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+#Process .pricing-card-pro {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Every section shares the same side padding; cards sit inside it */
+.about .page-vertical-padding > .about-content-wrapper {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.work-image-block {
+  border-radius: 16px !important;
+}
+.work-card-info {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Project cards are static: no hover reactions */
+.work-card,
+.work-card *,
+.work-view-btn {
+  transition: none !important;
+}
+.work-card:hover .work-image,
+.work-card:hover .work-video,
+.work-card:hover .work-image-block {
+  transform: scale(1.104) !important;
+}
+.work-card:hover .work-image-block {
+  transform: none !important;
+}
+.work-view-btn:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+.about {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.work-card {
+  width: 100% !important;
+  max-width: none !important;
+}
+@media screen and (max-width: 479px) {
+  .intro-video {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+.works-cards-block {
+  width: 100% !important;
+  align-self: stretch !important;
+}
+@media screen and (min-width: 480px) and (max-width: 991px) {
+  .intro-video {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
